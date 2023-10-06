@@ -14,8 +14,8 @@ const AdminLogin = () => {
     }
   }, [])
 
-  const loginHandle = async () => {
-    let result = await axios.post("http://localhost:4000/admin/login", {
+  const loginHandle = async() => {
+    let result = await axios.post("http://localhost:8000/admin/login", {
       username: AdminUsername,
       password: AdminPassword
     })
@@ -38,10 +38,8 @@ const AdminLogin = () => {
         <div className='login-signup-btn-cont'>
           <button className='signupBtn' onClick={() => navigate("/AdminSignup")}>Sign Up</button>
           <button type='submit' className='loginBtn'
-            onClick={(e) => {
-              e.preventDefault();
-              loginHandle()
-            }}>Login</button>
+            onClick={(e) => {e.preventDefault(); 
+            loginHandle()}}>Login</button>
         </div>
       </form>
     </div>

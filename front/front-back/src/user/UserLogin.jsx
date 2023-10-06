@@ -1,6 +1,7 @@
 import React, { useState ,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import './Userlogin.css'
 
 function UserLogin() {
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ function UserLogin() {
 
 
     const Loginhandle = async () => {
-        let result = await axios.post("http://localhost:8080/user/login", {
+        let result = await axios.post("http://localhost:8000/user/login", {
             username: username,
             password: password
         })
@@ -35,7 +36,7 @@ function UserLogin() {
 
 
     return (
-        <div>
+        <div className='user'>
             <h1>User Login</h1>
             <form action="">
                 <input type="text" placeholder='Username' value={username} onChange={(e) => { setUsername(e.target.value) }} />

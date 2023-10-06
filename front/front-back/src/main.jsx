@@ -1,11 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home.jsx";
 import Header from "./Header";
-import UserLogin from "./userLogin.jsx";
-import AdminLogin from "./adminLogin.jsx";
+import UserLogin from "./user/UserLogin.jsx";
+import AdminLogin from "./admin/AdminLogin.jsx";
+import UserSignup from "./user/UserSignUp.jsx";
+import AdminSignUp from "./admin/AdminSignUp.jsx";
+import AddProduct from "./admin/AddProduct.jsx";
+import Allproducts from "./admin/Allproducts.jsx";
+import EditProduct from "./admin/EditProduct.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 <BrowserRouter>
@@ -14,9 +18,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path='/' element={<Home />} />
           <Route path="/userLogin" element={<UserLogin/>}/>
           <Route path="/adminLogin" element={<AdminLogin/>}/>
+          <Route path='/userSignUp' element={<UserSignup />} />
+          <Route path='/adminSignup' element={<AdminSignUp />} />
+          <Route path='/addproduct' element={<AddProduct />} />
+          <Route path='/allproducts' element={<Allproducts />} />
+          <Route path='/editproduct' element={<EditProduct />} />
 
-          {/* <Route path='/adminSignup' element={<AdminSignup />} />
-          <Route path='/userSignUp' element={<UserSignup />} /> */}
+
+
 </Routes>
 
 </BrowserRouter>

@@ -1,0 +1,22 @@
+.add-product {
+    height: 405px;
+    width: 300px;
+    border: 2px solid;
+    margin: auto;
+    padding: 16px;
+    text-align: center;
+    margin-top: 40px;
+}
+.add-product form input{
+    height: 30px;
+    width: 245px;
+    /* padding: 3px; */
+    margin: 10px;
+}
+button#addProductBtn {
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    background-color: blue;
+    border: none;
+    color: white;
+}
