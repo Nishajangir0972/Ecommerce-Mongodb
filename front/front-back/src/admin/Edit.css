@@ -1,0 +1,15 @@
+.edit{
+    height: 405px;
+    width: 300px;
+    border: 2px solid;
+    margin: auto;
+    padding: 16px;
+    text-align: center;
+    margin-top: 40px;
+}
+.edit input{
+    height: 30px;
+    width: 245px;
+    /* padding: 3px; */
+    margin: 10px;
+}

@@ -10,6 +10,7 @@ import AdminSignUp from "./admin/AdminSignUp.jsx";
 import AddProduct from "./admin/AddProduct.jsx";
 import Allproducts from "./admin/Allproducts.jsx";
 import EditProduct from "./admin/EditProduct.jsx";
+import Alluserproduct from "./user/AlluserProduct.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 <BrowserRouter>
@@ -22,8 +23,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path='/adminSignup' element={<AdminSignUp />} />
           <Route path='/addproduct' element={<AddProduct />} />
           <Route path='/allproducts' element={<Allproducts />} />
-          <Route path='/editproduct' element={<EditProduct />} />
-
+          <Route path='/edit/:id' element={<EditProduct />} />
+          <Route path='/alluserproducts' element={<Alluserproduct/>}/>
 
 
 </Routes>

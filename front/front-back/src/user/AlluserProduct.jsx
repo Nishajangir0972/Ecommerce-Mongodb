@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
-import './Allproduct.css'
+
 import { useNavigate } from 'react-router-dom'
 
 
 
-function Allproducts() {
+function Alluserproduct() {
     const [allproduct , setAllproduct] = useState([])
     const navigate = useNavigate()
 
@@ -20,17 +20,9 @@ function Allproducts() {
         console.log(result);
     }
 
-const productEdit = (id) =>{
-    navigate(`/edit/${id}`)
-}
 
-const productDelete = async(id) =>{
-let result = await axios.delete(`http://localhost:8000/product/del/${id}`)
-if (result.data) {
-    alert(`Product with ID: ${id} has been deleted`)
-    navigate("/AllProducts")
-  }
-}
+
+
   return (
     <div className='allProduct'>
         <h1>All Products</h1>
@@ -57,8 +49,7 @@ if (result.data) {
                     <h2>Company: {product.company}</h2>
                     
                 </div>
-<button onClick={()=>productEdit(product._id)}>Edit</button>
-<button onClick={()=>productDelete(product._id)}>Delete</button>
+<button>Add to Cart</button>
             </div>
         )
     })}
@@ -67,4 +58,4 @@ if (result.data) {
   )
 }
 
-export default Allproducts
+export default Alluserproduct
