@@ -1,6 +1,6 @@
 import express from "express"
 import AdminModel from "./AdminModel.js";
-import bcrypt from "bcryptjs"
+import bcrypt from "bcrypt"
 
 const AdminRouter = express.Router();
 
@@ -16,23 +16,44 @@ AdminRouter.post("/register",async(req,res)=>{
         let UsertoRegister = new AdminModel({name ,email, username, password})
         let result = await UsertoRegister.save()
         console.log(result)
+        res.json(result)
     })
    
 })
 
 AdminRouter.post("/login",async(req,res)=>{
-    if (req.body.username && req.body.password) {
-        let usertologin = await AdminModel.findOne(req.body).select("-password")
 
-        if (usertologin) {
-            res.send(usertologin)
-        } else {
-            res.send({ result: "no user found" })
-        }
+    // let{name ,email,username , password} = req.body
+    if(req.body.username && req.body.password){
+        let admintologin  = await AdminModel.findOne({username:req.body.username})
+        bcrypt.compare(req.body.username , admintologin.password,(err,result)=>{
+            if(err || !result){
+                res.status(401).json({ message: 'Authentication failed' });
+                console.log(err, result);
+            }
+            else {
+                console.log("Matched");
+                res.send(admintologin)
+            }
+            
+        })
     }
-    else {
-        res.send({ result: "Plzz Enter both fields" })
-    }
+
+
+
+
+    // if (req.body.username && req.body.password) {
+    //     let usertologin = await AdminModel.findOne(req.body).select("-password")
+
+    //     if (usertologin) {
+    //         res.send(usertologin)
+    //     } else {
+    //         res.send({ result: "no user found" })
+    //     }
+    // }
+    // else {
+    //     res.send({ result: "Plzz Enter both fields" })
+    // }
 })
 
 

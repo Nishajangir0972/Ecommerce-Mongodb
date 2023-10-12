@@ -20,12 +20,13 @@ const AdminLogin = () => {
       password: AdminPassword
     })
     result = result.data
-    if (result.name) {
+    console.log(result)
+    if (result.username) {
       localStorage.setItem("adminData", JSON.stringify(result))
       navigate("/")
     }
     else {
-      alert("Please Enter Correct Details")
+      // alert("Please Enter Correct Details")
     }
   }
 

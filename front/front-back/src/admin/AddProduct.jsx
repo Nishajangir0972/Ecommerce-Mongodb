@@ -11,7 +11,7 @@ function AddProduct() {
    const [image , setImage] = useState("")
    const navigate = useNavigate()
 
-   const AddProduct = async()=>{
+   const AddProduct = async()=>{    
     let result = await axios.post("http://localhost:8000/product/add" , {name,price,category,company,image} ,{
         headers:{
             'Content-Type': 'multipart/form-data',
