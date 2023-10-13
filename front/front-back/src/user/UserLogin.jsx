@@ -32,6 +32,7 @@ function UserLogin() {
         else {
             alert("Please Enter Correct Details")
         }
+        console.log(result.token)
     }
 
 

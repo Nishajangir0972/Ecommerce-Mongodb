@@ -32,7 +32,7 @@ const User = localStorage.getItem("userData")
       {
        
         User || Admin ?
-          <Link to="/" onClick={() => { localStorage.clear() }}>Logout  </Link>
+          <Link to="/"  id="log" onClick={() => { localStorage.clear() }}>Logout  </Link>
           :
           <>
             <Link to="/userLogin">Login</Link>

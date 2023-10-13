@@ -1,6 +1,5 @@
 import express from "express";
 import ProductModel from "./ProductModel.js";
-// import { db } from "./index.js";
 import multer from "multer";
 import path from "path";
 

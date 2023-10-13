@@ -26,7 +26,7 @@ const AdminLogin = () => {
       navigate("/")
     }
     else {
-      // alert("Please Enter Correct Details")
+      alert("Please Enter Correct Details")
     }
   }
 

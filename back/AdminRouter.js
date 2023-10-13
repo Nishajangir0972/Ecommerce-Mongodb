@@ -1,6 +1,9 @@
-import express from "express"
+import express, { json } from "express"
 import AdminModel from "./AdminModel.js";
 import bcrypt from "bcrypt"
+import Jwt from "jsonwebtoken";
+
+const Secretkey = 'nisha-jangir'
 
 const AdminRouter = express.Router();
 
@@ -32,11 +35,18 @@ AdminRouter.post("/login",async(req,res)=>{
                 console.log(err, result);
             }
             else {
-                console.log("Matched");
-                res.send(admintologin)
+                const paylod = {username:admintologin}
+                const token = Jwt.sign(paylod,Secretkey,{expiresIn:'1h'})
+                // console.log("Matched");
+                res.send(admintologin ,token)
             }
             
         })
+//         jwt.sign({user},Secretkey, {expiresIn:'300s'}, (err,token)=>{
+// res.json({
+//     token 
+// })
+//         })
     }
 
 
