@@ -1,6 +1,7 @@
 import express from "express"
 import UserModel from "./UserModel.js";
 import Jwt from "jsonwebtoken";
+import bcrypt from 'bcrypt'
 
 const Secretkey = 'nisha-jangir'
 

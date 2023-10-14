@@ -16,9 +16,7 @@ const storage = multer.diskStorage({
   })
   const upload = multer({ storage: storage });
   
-  ProductRouter.post("/add",
-    upload.single("image"),
-    async (req, res) => {
+  ProductRouter.post("/add", upload.single("image"),  async (req, res) => {
       const { name, price, category, company } = req.body;
       const image = req.file;
     const productToAdd  = new ProductModel({name, price, category, company,image})

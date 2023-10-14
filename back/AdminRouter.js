@@ -5,7 +5,7 @@ import Jwt from "jsonwebtoken";
 
 const Secretkey = 'nisha-jangir'
 
-const AdminRouter = express.Router();
+const AdminRouter = express.Router();    
 
 AdminRouter.post("/register",async(req,res)=>{
     let{name ,email,username , password} = req.body
